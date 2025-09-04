@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2eafc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .username-box {
+      background: rgba(255,255,255,0.85);
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2rem 3rem;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #6c63ff;
+      letter-spacing: 2px;
+      animation: fadeIn 1.2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="username-box">
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <img src="https://api.dicebear.com/7.x/bottts/svg?seed={{ username }}" alt="Avatar" style="width:80px;height:80px;border-radius:50%;box-shadow:0 2px 12px #6c63ff22;animation:avatarIn 1.2s;">
+      <h2 style="margin-top:1rem;font-size:2rem;font-weight:700;color:#6c63ff;animation:fadeIn 1.2s 0.3s both;">Welcome, <span style="color:#4f4f4f">{{ username }}</span>!</h2>
+      <p style="margin-top:0.5rem;color:#444;font-size:1.1rem;animation:fadeIn 1.2s 0.6s both;">You have successfully logged in.</p>
+      <a href="/logout" class="btn btn-outline-primary mt-3" style="animation:fadeIn 1.2s 0.9s both;">Logout</a>
+    </div>
+  </div>
+  <style>
+    @keyframes avatarIn {
+      from { opacity: 0; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</body>
+</html>
